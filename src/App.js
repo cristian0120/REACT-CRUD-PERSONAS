@@ -5,15 +5,15 @@ import AddUserForm from "./components/ AddUserForm";
 import EditUserForm from "./components/EditUserForm";
 function App() {
   const usersData = [
-    { id: uuiv4(), name: 'Tania', username: 'floppydiskette', age:"19" },
-    { id: uuiv4(), name: 'Craig', username: 'siliconeidolon', age:"29" },
-    { id: uuiv4(), name: 'Ben', username: 'benisphere', age:"35" },
+    { id: uuiv4(), name: 'Tania', username: 'floppydiskette', age: "19" },
+    { id: uuiv4(), name: 'Craig', username: 'siliconeidolon', age: "29" },
+    { id: uuiv4(), name: 'Ben', username: 'benisphere', age: "35" },
   ]
 
   const [users, setUsers] = useState(usersData);
   const [editing, setEditing] = useState(false)
   const [currentUser, setCurrentUser] = useState({
-    id: null, name: "", username: "", age:""
+    id: null, name: "", username: "", age: ""
   })
 
   const addUser = (user) => {
@@ -24,9 +24,9 @@ function App() {
     ])
   }
 
-  const updateUser =(id, updateUser)=>{
+  const updateUser = (id, updateUser) => {
     setEditing(false);
-    setUsers(users.map(user=>(user.id=== id ? updateUser:user)))
+    setUsers(users.map(user => (user.id === id ? updateUser : user)))
   }
 
   const deleteUser = (id) => {
@@ -39,7 +39,7 @@ function App() {
     console.log({ user })
     setEditing(true)
     setCurrentUser({
-      id: user.id, name: user.name, username: user.username,age: user.age
+      id: user.id, name: user.name, username: user.username, age: user.age
     })
   }
   return (
